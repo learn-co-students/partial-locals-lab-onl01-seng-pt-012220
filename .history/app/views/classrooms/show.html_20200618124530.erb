@@ -2,9 +2,9 @@
 <%= render partial: 'classroom', locals: {classroom: @classroom} %>
 All students:
 <ol>
-<% @classroom.students.each do |student| %>
+<% @students.each do |s| %>
     <li>
-    <%= render partial: 'students/student', locals: {student: student} %>
+    <%= render partial: 'students/student', locals: {student: s} %>
     </li>
 <% end %>
 </ol>
