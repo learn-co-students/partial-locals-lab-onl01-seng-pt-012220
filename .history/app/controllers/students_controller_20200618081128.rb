@@ -22,10 +22,13 @@ class StudentsController < ApplicationController
   end
 
   def index
-    @students = Student.search(params[:search])
+    @students = Student.where("name LIKE ?", "%M%")
+    if @students.empty?
+      @students = Student.all
+    end
   end
 
   def student_params
-    params.require(:student).permit(:name, :birthday, :hometown, :search)
+    params.require(:student).permit(:name, :birthday, :hometown)
   end
 end
