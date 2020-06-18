@@ -1,0 +1,4 @@
+<h1>Students</h1>
+<% @students.where("name LIKE ?", "%M%").each do |s| %>
+    <%= render partial: 'student', locals: {stu: s} %>
+<%end%>

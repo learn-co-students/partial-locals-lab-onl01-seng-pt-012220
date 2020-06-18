@@ -1,0 +1,11 @@
+<h1>Classroom Info</h1>
+<%= render partial: 'classroom', locals: {classroom: @classroom} %>
+All students:
+<ol>
+<% binding.pry %>
+<% @students.each do |student| %>
+    <li>
+    <%= render partial: 'students/student', locals: {student: student} %>
+    </li>
+<% end %>
+</ol>

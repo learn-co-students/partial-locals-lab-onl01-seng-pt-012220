@@ -1,0 +1,9 @@
+<h1>Students</h1>
+<%= form_for Student.find do |f| %>
+    <%= f.label :search %>
+    <%= f.text_field :search %>
+    <%= f.submit %>
+<% end %>
+<% @students.each do |s| %>
+    <%= render partial: 'student', locals: {stu: s} %>
+<%end%>

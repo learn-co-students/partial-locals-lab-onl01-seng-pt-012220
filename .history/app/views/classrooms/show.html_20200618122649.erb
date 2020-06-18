@@ -1,0 +1,12 @@
+<h1>Classroom Info</h1>
+<%= render partial: 'classroom', locals: {classroom: @classroom} %>
+Oldest student:
+<%= render partial: 'students/student', locals: {student: @student} %>
+All students:
+<ol>
+<% @students.each do |s| %>
+    <li>
+    <%= render partial: 'students/student', locals: {student: s} %>
+    </li>
+<% end %>
+</ol>

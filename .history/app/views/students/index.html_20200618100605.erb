@@ -1,0 +1,10 @@
+<h1>Students</h1>
+
+<%= form_for 'students' do |f| %>
+    <%= f.text_field :query %>
+    <%= f.submit %>
+<% end %>
+
+<% @students.each do |s| %>
+    <%= render partial: 'student', locals: {stu: s} %>
+<%end%>
