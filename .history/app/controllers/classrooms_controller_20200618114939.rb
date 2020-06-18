@@ -2,7 +2,6 @@ class ClassroomsController < ApplicationController
   def show
     @classroom = set_classroom
     @student = @classroom.oldest_student
-    @students = @classroom.students
   end
 
   def index

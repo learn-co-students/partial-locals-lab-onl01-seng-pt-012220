@@ -1,8 +1,7 @@
 class ClassroomsController < ApplicationController
   def show
-    @classroom = set_classroom
+    @classroom = Classroom.find(params[:id])
     @student = @classroom.oldest_student
-    @students = @classroom.students
   end
 
   def index
@@ -10,14 +9,11 @@ class ClassroomsController < ApplicationController
   end
 
   private
-  def set_classroom
-    Classroom.find(params[:id])
-  end
   def classroom_params
     params.require(:classroom).permit(
       :course_name,
       :semester,
-      :classroom
+      :room
     )
   end
 end

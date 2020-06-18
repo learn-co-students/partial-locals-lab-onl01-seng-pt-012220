@@ -2,7 +2,6 @@ class ClassroomsController < ApplicationController
   def show
     @classroom = set_classroom
     @student = @classroom.oldest_student
-    @students = @classroom.students
   end
 
   def index
@@ -17,7 +16,7 @@ class ClassroomsController < ApplicationController
     params.require(:classroom).permit(
       :course_name,
       :semester,
-      :classroom
+      :room
     )
   end
 end
