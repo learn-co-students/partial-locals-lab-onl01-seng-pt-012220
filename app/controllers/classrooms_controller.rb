@@ -5,6 +5,6 @@ class ClassroomsController < ApplicationController
   end
 
   def index
-    @classrooms = Classroom.all
+    @classroom = Classroom.all
   end
 end
